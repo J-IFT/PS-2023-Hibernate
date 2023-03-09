@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+		<!-- MySQL DB
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost/B3</property>
+		-->
+		<!-- H2 DB -->
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="connection.url">jdbc:h2:mem:B3;DB_CLOSE_DELAY=-1</property>
+
+        <!-- SQL dialect -->
+		<!-- MySQL DB
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		-->
+		<!-- H2 DB -->
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+
+        <property name="connection.username">root</property>
+        <property name="connection.password">MyPassword</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+	
+	<!-- Bind one session per request : configures SessionFactory.useCurrentSession() -->
+		<!-- Possible values : jta, thread, managed -->
+		<!-- https://docs.jboss.org/hibernate/orm/4.1/manual/en-US/html/ch02.html#architecture-current-session -->
+	<property name="hibernate.current_session_context_class">???</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">create</property>
+        <!-- OR - Only create the database schema if not existing yet - for sharing H2 with JDBC during dev -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+
+        <!-- Example of annotated entity class -->
+        <!-- <mapping class="b3.hibernate.model.MyEntity"/> -->
+        <!-- Example of XML mappings -->
+        <!-- <mapping resource="MyEntity.hbm.xml"/> -->
+
+    </session-factory>
+
+</hibernate-configuration>
