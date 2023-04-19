@@ -1,29 +1,39 @@
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
+    id("org.jetbrains.kotlin.jvm") version "1.5.31"
     application
 }
 
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
 dependencies {
-    // Add Hibernate to the project
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml")
+    implementation("com.fasterxml.jackson.core:jackson-databind")
+    implementation("org.slf4j:slf4j-simple:1.7.32")
+    implementation("org.postgresql:postgresql:42.3.1")
+
+    // Hibernate ORM with JPA API
     implementation("org.hibernate:hibernate-core:5.6.7.Final")
+    implementation("org.hibernate:hibernate-envers:5.6.7.Final")
+    implementation("org.hibernate:hibernate-validator:6.2.0.Final")
 
-    // An in-memory h2 database to test the application without the need for a real database
-    implementation("com.h2database:h2:2.1.210")
-    // The driver to connect to a real MySQL database
-    //implementation("mysql:mysql-connector-java:8.0.28")
+    // H2 Database for testing
+    testImplementation("com.h2database:h2:1.4.200")
 
-    // Use JUnit test framework.
+    // JUnit
     testImplementation("junit:junit:4.13.2")
 
+    implementation("mysql:mysql-connector-java:8.0.32")
+
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.0")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.0")
 }
 
 application {
-    // Define the main class for the application.
-    mainClass.set("b3.hibernate.App")
+    mainClassName = "com.example.MyApplicationKt"
 }
-
