@@ -1,15 +1,19 @@
 package b3.hibernate;
 import java.util.Scanner;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 public class App {
 
     private static final Scanner scanner = new Scanner(System.in);
+    private static SessionFactory sessionFactory;
 
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
+        sessionFactory = new Configuration().configure().buildSessionFactory();
         boolean exit = false;
 
         while (!exit) {
