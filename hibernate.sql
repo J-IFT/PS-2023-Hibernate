@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 20 avr. 2023 à 14:47
+-- Généré le : jeu. 20 avr. 2023 à 16:35
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.4.9
 
@@ -24,26 +24,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `hibernate_sequence`
+--
+
+DROP TABLE IF EXISTS `hibernate_sequence`;
+CREATE TABLE IF NOT EXISTS `hibernate_sequence` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `hibernate_sequence`
+--
+
+INSERT INTO `hibernate_sequence` (`next_val`) VALUES
+(3);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `products`
 --
 
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
-  `id` bigint(20) NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  `code` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `datePeremption` date DEFAULT NULL,
+  `nom` varchar(255) DEFAULT NULL,
   `quantite` int(11) NOT NULL,
-  `date_peremption` date NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `code` (`code`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `products`
 --
 
-INSERT INTO `products` (`id`, `nom`, `code`, `quantite`, `date_peremption`) VALUES
-(0, 'Test', '111', 5, '2023-04-19');
+INSERT INTO `products` (`id`, `code`, `datePeremption`, `nom`, `quantite`) VALUES
+(1, '23', '2023-02-09', 'SICAFONCTIONNEPUTAIN', 8);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
