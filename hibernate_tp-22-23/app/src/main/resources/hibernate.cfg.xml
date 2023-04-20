@@ -26,6 +26,7 @@
         <!-- SQL dialect -->
         <!-- MySQL DB -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
 
         <!-- H2 DB
         <property name="dialect">org.hibernate.dialect.H2Dialect</property>
@@ -40,14 +41,16 @@
         <!-- Bind one session per request : configures SessionFactory.useCurrentSession() -->
         <!-- Possible values : jta, thread, managed -->
         <!-- https://docs.jboss.org/hibernate/orm/4.1/manual/en-US/html/ch02.html#architecture-current-session -->
-        <property name="hibernate.current_session_context_class">???</property>
+        <property name="hibernate.current_session_context_class">thread</property>
 
         <!-- Disable the second-level cache  -->
-        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+        <!-- <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property> -->
+        <property name="cache.region.factory_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
-
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property>
         <!-- OR - Only create the database schema if not existing yet - for sharing H2 with JDBC during dev -->
@@ -57,6 +60,8 @@
         <!-- <mapping class="b3.hibernate.model.MyEntity"/> -->
         <!-- Example of XML mappings -->
         <!-- <mapping resource="MyEntity.hbm.xml"/> -->
+        <!--<mapping class="b3.hibernate.model.MyEntity"/>-->
+        <mapping class="b3.hibernate.model.Products"/>
 
     </session-factory>
 

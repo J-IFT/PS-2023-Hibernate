@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Data Source Connecteur MySQL" uuid="9e0d519c-6740-4b90-9ec5-79e00c047dcd">
-      <driver-ref>java.sql.Driver</driver-ref>
-      <synchronize>true</synchronize>
-      <configured-by-url>true</configured-by-url>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/hibernate</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
     <data-source source="LOCAL" name="bin:main:hibernate.cfg.xml/Hibernate" uuid="009d2507-a41f-492e-bea3-2c5b2456e3f1">
       <driver-ref>h2.unified</driver-ref>
       <synchronize>true</synchronize>
@@ -29,6 +21,14 @@ C:/Users/julie/OneDrive - Ifag Paris/Documents/Persistance de données/PS-2023-H
 C:/Users/julie/OneDrive - Ifag Paris/Documents/Persistance de données/PS-2023-Hibernate/hibernate_tp-22-23/app/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost/hibernate</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="Data Source Connecteur MySQL" uuid="fd298dd0-6beb-452f-ae0d-a3baf12fc8f9">
+      <driver-ref>java.sql.Driver</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/hibernate</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

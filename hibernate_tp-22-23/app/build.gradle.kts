@@ -20,6 +20,7 @@ dependencies {
     implementation("org.hibernate:hibernate-core:5.6.7.Final")
     implementation("org.hibernate:hibernate-envers:5.6.7.Final")
     implementation("org.hibernate:hibernate-validator:6.2.0.Final")
+    implementation("org.hibernate:hibernate-entitymanager:5.5.7.Final")
 
     // H2 Database for testing
     testImplementation("com.h2database:h2:1.4.200")
