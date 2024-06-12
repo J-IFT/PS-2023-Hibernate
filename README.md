@@ -6,7 +6,7 @@
 
 Mars 2023
 
-Groupe : Juliette, Brice & Flavien
+Groupe : Juliette & Flavien
 
 ### 📌 Consignes du projet :
 L’application à développer est une application permettant l'enregistrement de produits consommables :
